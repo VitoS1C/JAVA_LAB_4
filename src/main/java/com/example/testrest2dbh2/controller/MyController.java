@@ -1,8 +1,5 @@
 package com.example.testrest2dbh2.controller;
 
-<<<<<<< HEAD
-public class MyController {
-=======
 import com.example.testrest2dbh2.entity.Student;
 import com.example.testrest2dbh2.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,25 +16,33 @@ public class MyController {
     private StudentService studentService;
 
     @GetMapping("/students")
-    public List<Student> showAllStudents(){
+    public List<Student> showAllStudents() {
         List<Student> allStudents = studentService.getAllStudents();
         return allStudents;
     }
 
     @GetMapping("/students/{id}")
-    public Student getStudent(@PathVariable("id")int id){return studentService.getStudent(id);}
+    public Student getStudent(@PathVariable("id") int id) {
+        return studentService.getStudent(id);
+    }
 
     @PostMapping("/students")
-    public Student saveStudent(@RequestBody Student student){return studentService.saveStudent(student);}
+    public Student saveStudent(@RequestBody Student student) {
+        return studentService.saveStudent(student);
+    }
 
     @PutMapping("/students")
-    public Student updateStudent(@RequestBody Student student){
+    public Student updateStudent(@RequestBody Student student) {
         studentService.saveStudent(student);
         return student;
     }
 
     @DeleteMapping("/students/{id}")
-    public void updateStudent(@PathVariable("id") int id) { studentService.deleteStudent(id);}
+    public void updateStudent(@PathVariable("id") int id) {
+        studentService.deleteStudent(id);
+    }
 
->>>>>>> 6257848 (finalize)
+    ;
 }
+
+
